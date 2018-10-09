@@ -1,6 +1,6 @@
 html, body {
   position: relative;
-  overflow: hidden;
+  overflow: auto;
   background: #F1F1F1;
   height: 100%;
   width: 100%;
@@ -10,11 +10,25 @@ html, body {
   color: #757575;
   font-size: 12px; }
 
+* {
+  box-sizing: border-box; }
+
 p {
   margin: .2em 0; }
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0; }
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0; }
+
+.clearfix {
+  *zoom: 1; }
 
 .content-wrap {
   position: absolute;
@@ -23,20 +37,17 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   width: 1200px;
-  height: 500px;
+  padding: 2em;
   margin: auto; }
   .content-wrap h1 {
-    position: absolute;
-    -webkit-transform: translate(0, -50%);
-    transform: translate(0, -50%);
-    top: 50%;
-    left: 20px;
+    float: left;
     color: #4D4D4D;
-    font-size: 200px; }
+    font-size: 15em;
+    width: 600px; }
   .content-wrap .content, .content-wrap footer {
-    width: 300px; }
+    width: 300px;
+    position: absolute; }
   .content-wrap .content {
-    position: absolute;
     top: 20px;
     right: 20px; }
     .content-wrap .content h3 {
@@ -44,7 +55,6 @@ h1, h2, h3, h4, h5, h6 {
     .content-wrap .content .ps {
       margin-top: 3em; }
   .content-wrap footer {
-    position: absolute;
     bottom: 20px;
     right: 20px;
     font-weight: bold;
@@ -54,3 +64,18 @@ h1, h2, h3, h4, h5, h6 {
       display: inline-block;
       width: 10px;
       margin-right: 5px; }
+
+@media screen and (max-width: 1200px) {
+  .content-wrap {
+    width: 600px;
+    position: initial;
+    -webkit-transform: none;
+    transform: none; }
+    .content-wrap h1 {
+      float: none; }
+    .content-wrap .content, .content-wrap footer {
+      margin: 10em auto;
+      float: none;
+      position: initial; }
+    .content-wrap footer {
+      margin-bottom: 2em; } }
