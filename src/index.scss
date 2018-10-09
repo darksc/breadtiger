@@ -81,15 +81,38 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 600px) and (max-width: 1200px) {
   .content-wrap {
     width: 600px;
     position: initial;
     transform: none;
     h1 {
+      width: initial;
       float: none;
     }
     .content, footer {
+      margin: 10em auto;
+      float: none;
+      position: initial;
+    }
+    footer {
+      margin-bottom: 2em;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .content-wrap {
+    width: 300px;
+    position: initial;
+    transform: none;
+    h1 {
+      width: initial;
+      float: none;
+      font-size: 6em;
+    }
+    .content, footer {
+      width: initial;
       margin: 10em auto;
       float: none;
       position: initial;
